@@ -10,6 +10,8 @@ import UIKit
 class CompendiumView: UIView {
     
     var cards: [CardModel] = []
+    
+    var didTapOnButtonHandler: (() -> Void)?
 
     let backgroundImage: UIImageView = {
         let backgroundImage = UIImageView()
@@ -83,6 +85,10 @@ extension CompendiumView: UITableViewDelegate, UITableViewDataSource {
         cell.cellName.text = card.name
         cell.cellName.textColor = .blue
         return cell
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        didTapOnButtonHandler?()
     }
     
     

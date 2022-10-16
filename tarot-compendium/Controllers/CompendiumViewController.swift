@@ -13,6 +13,10 @@ class CompendiumViewController: UIViewController {
     
     override func loadView() {
         self.view = compendiumView
+        compendiumView.didTapOnButtonHandler = {
+            let nextViewController = CardViewController()
+            self.navigationController?.pushViewController(nextViewController, animated: true)
+        }
     }
     
 
