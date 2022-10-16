@@ -9,6 +9,12 @@ import UIKit
 
 class CompendiumViewController: UIViewController {
     
+    let compendiumView = CompendiumView()
+    
+    override func loadView() {
+        self.view = compendiumView
+    }
+    
 
     override func viewDidLoad() {
         super.viewDidLoad()
