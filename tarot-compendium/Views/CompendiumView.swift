@@ -8,6 +8,8 @@
 import UIKit
 
 class CompendiumView: UIView {
+    
+    var cards: [CardModel] = []
 
     let backgroundImage: UIImageView = {
         let backgroundImage = UIImageView()
@@ -16,7 +18,8 @@ class CompendiumView: UIView {
     }()
     
     lazy var tableView: UITableView = {
-        let tableView = UITableView()
+        let tableView = UITableView(frame: .zero, style: .plain)
+        tableView.register(TableViewCell.self, forCellReuseIdentifier: "TableViewCell")
         tableView.delegate = self
         tableView.dataSource = self
         tableView.rowHeight = 80
@@ -28,6 +31,12 @@ class CompendiumView: UIView {
     override init(frame: CGRect) {
         super.init(frame: frame)
         configCompendiumView()
+        API().getAllCards { list in
+            self.cards = list.cards
+            DispatchQueue.main.async {
+                self.tableView.reloadData()
+            }
+        }
         
     }
     
@@ -65,11 +74,15 @@ class CompendiumView: UIView {
 extension CompendiumView: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 10
+        return cards.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        return UITableViewCell()
+        let card = cards[indexPath.row]
+        let cell = tableView.dequeueReusableCell(withIdentifier: "TableViewCell") as! TableViewCell
+        cell.cellName.text = card.name
+        cell.cellName.textColor = .blue
+        return cell
     }
     
     
