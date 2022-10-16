@@ -12,10 +12,6 @@ class CompendiumViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        view.backgroundColor = .blue
     }
-
-
 }
 

@@ -7,6 +7,20 @@
 
 import Foundation
 
-struct CardModel {
+struct CardModel: Codable {
+    
+    enum CardType: String, Codable {
+        case major
+        case minor
+    }
+    
+    let name_short: String
+    let name: String
+    let value: String
+    let value_int: Int
+    let type: CardType
+    let meaning_up: String
+    let meaning_rev: String
+    let desc: String
     
 }

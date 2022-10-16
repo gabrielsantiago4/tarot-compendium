@@ -7,6 +7,8 @@
 
 import Foundation
 
-struct CardListModel {
+struct CardListModel: Codable {
     
+    let nhits: Int
+    let cards : [CardModel]
 }
