@@ -41,7 +41,12 @@ class TableViewCell: UITableViewCell {
         NSLayoutConstraint.activate([
             
             cellName.centerYAnchor.constraint(equalTo: contentView.centerYAnchor, constant: 0),
-            cellName.centerXAnchor.constraint(equalTo: contentView.centerXAnchor, constant: 0)
+            cellName.centerXAnchor.constraint(equalTo: contentView.centerXAnchor, constant: 20),
+            
+            cellImage.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 30),
+            cellImage.centerYAnchor.constraint(equalTo: contentView.centerYAnchor, constant: 0),
+            cellImage.heightAnchor.constraint(equalToConstant: 130),
+            cellImage.widthAnchor.constraint(equalToConstant: 75)
         
         ])
         

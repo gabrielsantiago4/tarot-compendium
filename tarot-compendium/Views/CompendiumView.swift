@@ -6,11 +6,13 @@
 //
 
 import UIKit
+import AVFoundation
 
 class CompendiumView: UIView {
     
-    var cards: [CardModel] = []
+    var audioplayer = AVAudioPlayer()
     
+    var cards: [CardModel] = []
     var didTapOnButtonHandler: ((CardModel) -> Void)?
 
     let backgroundImage: UIImageView = {
@@ -24,9 +26,10 @@ class CompendiumView: UIView {
         tableView.register(TableViewCell.self, forCellReuseIdentifier: "TableViewCell")
         tableView.delegate = self
         tableView.dataSource = self
-        tableView.rowHeight = 80
+        tableView.rowHeight = 150
         tableView.layer.cornerRadius = 10
         tableView.layer.masksToBounds = true
+        tableView.backgroundColor = .clear
         return tableView
     }()
     
@@ -61,10 +64,15 @@ class CompendiumView: UIView {
             backgroundImage.trailingAnchor.constraint(equalTo: trailingAnchor, constant: 0),
             backgroundImage.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 0),
             
-            tableView.heightAnchor.constraint(equalToConstant: 600),
-            tableView.widthAnchor.constraint(equalToConstant: 370),
-            tableView.centerXAnchor.constraint(equalTo: centerXAnchor, constant: 0),
-            tableView.centerYAnchor.constraint(equalTo: centerYAnchor, constant: 0)
+//            tableView.heightAnchor.constraint(equalToConstant: 600),
+//            tableView.widthAnchor.constraint(equalToConstant: 370),
+//            tableView.centerXAnchor.constraint(equalTo: centerXAnchor, constant: 0),
+//            tableView.centerYAnchor.constraint(equalTo: centerYAnchor, constant: 0)
+            
+            tableView.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 0),
+            tableView.trailingAnchor.constraint(equalTo: trailingAnchor, constant: 0),
+            tableView.topAnchor.constraint(equalTo: topAnchor, constant:  130),
+            tableView.bottomAnchor.constraint(equalTo: bottomAnchor, constant: -50)
         
         
         ])
@@ -83,13 +91,28 @@ extension CompendiumView: UITableViewDelegate, UITableViewDataSource {
         let card = cards[indexPath.row]
         let cell = tableView.dequeueReusableCell(withIdentifier: "TableViewCell") as! TableViewCell
         cell.cellName.text = card.name
-        cell.cellName.textColor = .blue
+        cell.cellImage.image = UIImage(named: card.name)
+        cell.backgroundColor = .clear
         return cell
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let card = cards[indexPath.row]
         didTapOnButtonHandler?(card)
+        
+        let pathSound = Bundle.main.path(forResource: "PageFlip", ofType: "mp3")!
+                let url = URL(fileURLWithPath: pathSound)
+
+                do
+                {
+                    audioplayer = try AVAudioPlayer(contentsOf: url)
+                    audioplayer.play()
+
+                }catch{
+                    print(error)
+
+                }
+        
     }
     
     
