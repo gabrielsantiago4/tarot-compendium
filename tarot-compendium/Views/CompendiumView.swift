@@ -64,16 +64,10 @@ class CompendiumView: UIView {
             backgroundImage.trailingAnchor.constraint(equalTo: trailingAnchor, constant: 0),
             backgroundImage.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 0),
             
-//            tableView.heightAnchor.constraint(equalToConstant: 600),
-//            tableView.widthAnchor.constraint(equalToConstant: 370),
-//            tableView.centerXAnchor.constraint(equalTo: centerXAnchor, constant: 0),
-//            tableView.centerYAnchor.constraint(equalTo: centerYAnchor, constant: 0)
-            
             tableView.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 0),
             tableView.trailingAnchor.constraint(equalTo: trailingAnchor, constant: 0),
             tableView.topAnchor.constraint(equalTo: topAnchor, constant:  130),
             tableView.bottomAnchor.constraint(equalTo: bottomAnchor, constant: -50)
-        
         
         ])
         
