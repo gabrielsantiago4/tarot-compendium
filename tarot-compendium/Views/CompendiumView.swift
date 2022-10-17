@@ -11,7 +11,7 @@ class CompendiumView: UIView {
     
     var cards: [CardModel] = []
     
-    var didTapOnButtonHandler: (() -> Void)?
+    var didTapOnButtonHandler: ((CardModel) -> Void)?
 
     let backgroundImage: UIImageView = {
         let backgroundImage = UIImageView()
@@ -88,7 +88,8 @@ extension CompendiumView: UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        didTapOnButtonHandler?()
+        let card = cards[indexPath.row]
+        didTapOnButtonHandler?(card)
     }
     
     

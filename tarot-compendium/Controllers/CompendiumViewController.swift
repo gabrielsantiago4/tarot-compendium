@@ -13,9 +13,9 @@ class CompendiumViewController: UIViewController {
     
     override func loadView() {
         self.view = compendiumView
-        compendiumView.didTapOnButtonHandler = {
-            let nextViewController = CardViewController()
-            self.navigationController?.pushViewController(nextViewController, animated: true)
+        compendiumView.didTapOnButtonHandler = { [weak self] card in
+            let nextViewController = CardViewController(card: card)
+            self?.navigationController?.pushViewController(nextViewController, animated: true)
         }
     }
     
