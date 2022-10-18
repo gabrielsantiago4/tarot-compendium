@@ -35,6 +35,20 @@ class CardView: UIView {
         return cardMeaningDown
     }()
     
+    var cardUpIcon: UIImageView = {
+        let cardUp = UIImageView()
+        cardUp.image = UIImage(systemName: "arrow.up")
+        cardUp.tintColor = .black
+        return cardUp
+    }()
+    
+    var cardRevIcon: UIImageView = {
+        let cardRev = UIImageView()
+        cardRev.image = UIImage(systemName: "arrow.down")
+        cardRev.tintColor = .black
+        return cardRev
+    }()
+    
     override init(frame: CGRect) {
         super.init(frame: frame)
         configCardView()
@@ -44,18 +58,36 @@ class CardView: UIView {
         fatalError("init(coder:) has not been implemented")
     }
     
+    func configure(with card: CardModel) {
+        cardName.text = "\(card.name)"
+        cardName.font = UIFont(name: "OneSlice", size: 27)
+        cardImage.image = UIImage(named: card.name)
+        cardMeaningUp.text = "\(card.meaning_up)"
+        cardMeaningUp.font = UIFont(name: "RobotoCondensed-Regular", size: 21)
+        cardMeaningUp.numberOfLines = 0
+        cardMeaningDown.text = "\(card.meaning_rev)"
+        cardMeaningDown.font = UIFont(name: "RobotoCondensed-Regular", size: 21)
+        cardMeaningDown.numberOfLines = 0
+//        cardMeaningUp.backgroundColor = .clear
+//        cardMeaningUp.isEditable = false
+    }
+    
     func configCardView() {
         addSubview(backgroundImage)
         addSubview(cardName)
         addSubview(cardImage)
         addSubview(cardMeaningUp)
         addSubview(cardMeaningDown)
+        addSubview(cardUpIcon)
+        addSubview(cardRevIcon)
         
         backgroundImage.translatesAutoresizingMaskIntoConstraints = false
         cardName.translatesAutoresizingMaskIntoConstraints = false
         cardImage.translatesAutoresizingMaskIntoConstraints = false
         cardMeaningUp.translatesAutoresizingMaskIntoConstraints = false
         cardMeaningDown.translatesAutoresizingMaskIntoConstraints = false
+        cardUpIcon.translatesAutoresizingMaskIntoConstraints = false
+        cardRevIcon.translatesAutoresizingMaskIntoConstraints = false
         
         NSLayoutConstraint.activate([
             backgroundImage.topAnchor.constraint(equalTo: topAnchor, constant: 0),
@@ -72,13 +104,22 @@ class CardView: UIView {
             cardImage.centerYAnchor.constraint(equalTo: centerYAnchor,constant: -120),
             
             cardMeaningUp.topAnchor.constraint(equalTo: cardImage.bottomAnchor,constant: 20),
-            cardMeaningUp.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 30),
-            cardMeaningUp.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -30),
+            cardMeaningUp.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 80),
+            cardMeaningUp.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -50),
             
             cardMeaningDown.topAnchor.constraint(equalTo: cardMeaningUp.bottomAnchor, constant: 20),
-            cardMeaningDown.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -30),
-            cardMeaningDown.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 30)
+            cardMeaningDown.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 80),
+            cardMeaningDown.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -50),
             
+            cardUpIcon.trailingAnchor.constraint(equalTo: cardMeaningUp.leadingAnchor, constant: -30),
+            cardUpIcon.centerYAnchor.constraint(equalTo: cardMeaningUp.centerYAnchor, constant: 0),
+            cardUpIcon.heightAnchor.constraint(equalToConstant: 50),
+            cardUpIcon.widthAnchor.constraint(equalToConstant:30),
+            
+            cardRevIcon.trailingAnchor.constraint(equalTo: cardMeaningDown.leadingAnchor, constant: -30),
+            cardRevIcon.centerYAnchor.constraint(equalTo: cardMeaningDown.centerYAnchor, constant: 0),
+            cardRevIcon.heightAnchor.constraint(equalToConstant: 50),
+            cardRevIcon.widthAnchor.constraint(equalToConstant: 30)
             
             
         ])

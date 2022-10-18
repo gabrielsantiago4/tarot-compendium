@@ -23,8 +23,8 @@ class CardViewController: UIViewController {
     
     override func loadView() {
         view.self = cardView
-        cardView.cardName.text = card.name
-        cardView.cardImage.image = UIImage(named: card.name)
+        cardView.configure(with: card)
+    
     }
 
     override func viewDidLoad() {

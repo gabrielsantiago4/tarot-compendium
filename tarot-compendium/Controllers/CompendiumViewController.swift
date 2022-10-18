@@ -22,6 +22,11 @@ class CompendiumViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+//        let yourBackImage = UIImage(systemName: "trash")
+//        self.navigationController?.navigationBar.backIndicatorImage = yourBackImage
+//        self.navigationController?.navigationBar.backIndicatorTransitionMaskImage = yourBackImage
     }
 }
+
+
 
