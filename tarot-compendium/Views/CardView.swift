@@ -62,12 +62,12 @@ class CardView: UIView {
         cardName.text = "\(card.name)"
         cardName.font = UIFont(name: "OneSlice", size: 27)
         cardImage.image = UIImage(named: card.name)
-        cardMeaningUp.text = "\(card.meaning_up)"
+        cardMeaningUp.text = "\(card.meaning_up)\(card.meaning_rev)"
         cardMeaningUp.font = UIFont(name: "RobotoCondensed-Regular", size: 21)
         cardMeaningUp.numberOfLines = 0
-        cardMeaningDown.text = "\(card.meaning_rev)"
-        cardMeaningDown.font = UIFont(name: "RobotoCondensed-Regular", size: 21)
-        cardMeaningDown.numberOfLines = 0
+//        cardMeaningDown.text = "\(card.meaning_rev)"
+//        cardMeaningDown.font = UIFont(name: "RobotoCondensed-Regular", size: 21)
+//        cardMeaningDown.numberOfLines = 0
 //        cardMeaningUp.backgroundColor = .clear
 //        cardMeaningUp.isEditable = false
     }
@@ -77,17 +77,15 @@ class CardView: UIView {
         addSubview(cardName)
         addSubview(cardImage)
         addSubview(cardMeaningUp)
-        addSubview(cardMeaningDown)
-        addSubview(cardUpIcon)
-        addSubview(cardRevIcon)
+//        addSubview(cardMeaningDown)
+//        addSubview(cardUpIcon)
+//        addSubview(cardRevIcon)
         
         backgroundImage.translatesAutoresizingMaskIntoConstraints = false
         cardName.translatesAutoresizingMaskIntoConstraints = false
         cardImage.translatesAutoresizingMaskIntoConstraints = false
         cardMeaningUp.translatesAutoresizingMaskIntoConstraints = false
-        cardMeaningDown.translatesAutoresizingMaskIntoConstraints = false
-        cardUpIcon.translatesAutoresizingMaskIntoConstraints = false
-        cardRevIcon.translatesAutoresizingMaskIntoConstraints = false
+
         
         NSLayoutConstraint.activate([
             backgroundImage.topAnchor.constraint(equalTo: topAnchor, constant: 0),
@@ -104,22 +102,22 @@ class CardView: UIView {
             cardImage.centerYAnchor.constraint(equalTo: centerYAnchor,constant: -120),
             
             cardMeaningUp.topAnchor.constraint(equalTo: cardImage.bottomAnchor,constant: 20),
-            cardMeaningUp.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 80),
-            cardMeaningUp.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -50),
+            cardMeaningUp.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 50),
+            cardMeaningUp.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -30),
             
-            cardMeaningDown.topAnchor.constraint(equalTo: cardMeaningUp.bottomAnchor, constant: 20),
-            cardMeaningDown.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 80),
-            cardMeaningDown.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -50),
-            
-            cardUpIcon.trailingAnchor.constraint(equalTo: cardMeaningUp.leadingAnchor, constant: -30),
-            cardUpIcon.centerYAnchor.constraint(equalTo: cardMeaningUp.centerYAnchor, constant: 0),
-            cardUpIcon.heightAnchor.constraint(equalToConstant: 50),
-            cardUpIcon.widthAnchor.constraint(equalToConstant:30),
-            
-            cardRevIcon.trailingAnchor.constraint(equalTo: cardMeaningDown.leadingAnchor, constant: -30),
-            cardRevIcon.centerYAnchor.constraint(equalTo: cardMeaningDown.centerYAnchor, constant: 0),
-            cardRevIcon.heightAnchor.constraint(equalToConstant: 50),
-            cardRevIcon.widthAnchor.constraint(equalToConstant: 30)
+//            cardMeaningDown.topAnchor.constraint(equalTo: cardMeaningUp.bottomAnchor, constant: 20),
+//            cardMeaningDown.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 80),
+//            cardMeaningDown.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -50),
+//
+//            cardUpIcon.trailingAnchor.constraint(equalTo: cardMeaningUp.leadingAnchor, constant: -30),
+//            cardUpIcon.centerYAnchor.constraint(equalTo: cardMeaningUp.centerYAnchor, constant: 0),
+//            cardUpIcon.heightAnchor.constraint(equalToConstant: 50),
+//            cardUpIcon.widthAnchor.constraint(equalToConstant:30),
+//
+//            cardRevIcon.trailingAnchor.constraint(equalTo: cardMeaningDown.leadingAnchor, constant: -30),
+//            cardRevIcon.centerYAnchor.constraint(equalTo: cardMeaningDown.centerYAnchor, constant: 0),
+//            cardRevIcon.heightAnchor.constraint(equalToConstant: 50),
+//            cardRevIcon.widthAnchor.constraint(equalToConstant: 30)
             
             
         ])
