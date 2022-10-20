@@ -29,5 +29,11 @@ class CardViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        navigationItem.rightBarButtonItem = UIBarButtonItem(title: "add", style: .plain, target: self, action: #selector(CardViewController.saveCard))
+    }
+    
+    @objc func saveCard() {
+        DataManager.shared.save(card: card)
     }
 }

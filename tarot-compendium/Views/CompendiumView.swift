@@ -66,7 +66,7 @@ class CompendiumView: UIView {
             
             tableView.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 0),
             tableView.trailingAnchor.constraint(equalTo: trailingAnchor, constant: 0),
-            tableView.topAnchor.constraint(equalTo: topAnchor, constant:  130),
+            tableView.topAnchor.constraint(equalTo: topAnchor, constant:  100),
             tableView.bottomAnchor.constraint(equalTo: bottomAnchor, constant: -50)
         
         ])
@@ -86,7 +86,7 @@ extension CompendiumView: UITableViewDelegate, UITableViewDataSource {
         let cell = tableView.dequeueReusableCell(withIdentifier: "TableViewCell") as! TableViewCell
         cell.cellName.text = card.name
         cell.cellImage.image = UIImage(named: card.name)
-        cell.cellName.font = UIFont(name: "OneSlice", size: 23)
+        cell.cellName.font = UIFont(name: "OneSlice", size: 26)
         cell.backgroundColor = .clear
         return cell
     }
@@ -109,6 +109,6 @@ extension CompendiumView: UITableViewDelegate, UITableViewDataSource {
                 }
         
     }
-    
+
     
 }

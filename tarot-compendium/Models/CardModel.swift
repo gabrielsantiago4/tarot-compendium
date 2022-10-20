@@ -17,7 +17,7 @@ struct CardModel: Codable {
     let name_short: String
     let name: String
     let value: String
-    let value_int: Int
+    let value_int: Int32
     let type: CardType
     let meaning_up: String
     let meaning_rev: String

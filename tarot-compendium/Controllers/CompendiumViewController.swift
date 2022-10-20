@@ -18,13 +18,12 @@ class CompendiumViewController: UIViewController {
             self?.navigationController?.pushViewController(nextViewController, animated: true)
         }
     }
-    
 
     override func viewDidLoad() {
         super.viewDidLoad()
-//        let yourBackImage = UIImage(systemName: "trash")
-//        self.navigationController?.navigationBar.backIndicatorImage = yourBackImage
-//        self.navigationController?.navigationBar.backIndicatorTransitionMaskImage = yourBackImage
+        
+        self.navigationController?.navigationBar.tintColor = .black
+
     }
 }
 

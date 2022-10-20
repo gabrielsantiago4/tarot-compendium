@@ -35,20 +35,6 @@ class CardView: UIView {
         return cardMeaningDown
     }()
     
-    var cardUpIcon: UIImageView = {
-        let cardUp = UIImageView()
-        cardUp.image = UIImage(systemName: "arrow.up")
-        cardUp.tintColor = .black
-        return cardUp
-    }()
-    
-    var cardRevIcon: UIImageView = {
-        let cardRev = UIImageView()
-        cardRev.image = UIImage(systemName: "arrow.down")
-        cardRev.tintColor = .black
-        return cardRev
-    }()
-    
     override init(frame: CGRect) {
         super.init(frame: frame)
         configCardView()
@@ -65,11 +51,6 @@ class CardView: UIView {
         cardMeaningUp.text = "\(card.meaning_up)\(card.meaning_rev)"
         cardMeaningUp.font = UIFont(name: "RobotoCondensed-Regular", size: 21)
         cardMeaningUp.numberOfLines = 0
-//        cardMeaningDown.text = "\(card.meaning_rev)"
-//        cardMeaningDown.font = UIFont(name: "RobotoCondensed-Regular", size: 21)
-//        cardMeaningDown.numberOfLines = 0
-//        cardMeaningUp.backgroundColor = .clear
-//        cardMeaningUp.isEditable = false
     }
     
     func configCardView() {
@@ -77,9 +58,6 @@ class CardView: UIView {
         addSubview(cardName)
         addSubview(cardImage)
         addSubview(cardMeaningUp)
-//        addSubview(cardMeaningDown)
-//        addSubview(cardUpIcon)
-//        addSubview(cardRevIcon)
         
         backgroundImage.translatesAutoresizingMaskIntoConstraints = false
         cardName.translatesAutoresizingMaskIntoConstraints = false
@@ -104,21 +82,6 @@ class CardView: UIView {
             cardMeaningUp.topAnchor.constraint(equalTo: cardImage.bottomAnchor,constant: 20),
             cardMeaningUp.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 50),
             cardMeaningUp.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -30),
-            
-//            cardMeaningDown.topAnchor.constraint(equalTo: cardMeaningUp.bottomAnchor, constant: 20),
-//            cardMeaningDown.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 80),
-//            cardMeaningDown.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -50),
-//
-//            cardUpIcon.trailingAnchor.constraint(equalTo: cardMeaningUp.leadingAnchor, constant: -30),
-//            cardUpIcon.centerYAnchor.constraint(equalTo: cardMeaningUp.centerYAnchor, constant: 0),
-//            cardUpIcon.heightAnchor.constraint(equalToConstant: 50),
-//            cardUpIcon.widthAnchor.constraint(equalToConstant:30),
-//
-//            cardRevIcon.trailingAnchor.constraint(equalTo: cardMeaningDown.leadingAnchor, constant: -30),
-//            cardRevIcon.centerYAnchor.constraint(equalTo: cardMeaningDown.centerYAnchor, constant: 0),
-//            cardRevIcon.heightAnchor.constraint(equalToConstant: 50),
-//            cardRevIcon.widthAnchor.constraint(equalToConstant: 30)
-            
             
         ])
     }

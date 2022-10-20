@@ -28,6 +28,8 @@
 		3691965228FDD63C002DF09D /* RobotoCondensed-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 3691965128FDD63C002DF09D /* RobotoCondensed-Regular.ttf */; };
 		3691965428FEDB64002DF09D /* RobotoCondensed-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 3691965328FEDB64002DF09D /* RobotoCondensed-Bold.ttf */; };
 		3691965728FEE4DE002DF09D /* FavouriteData.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 3691965528FEE4DE002DF09D /* FavouriteData.xcdatamodeld */; };
+		3691965A29001F1F002DF09D /* DataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3691965929001F1F002DF09D /* DataManager.swift */; };
+		36EC9FFF290171F40049BD5F /* PageBack.wav in Resources */ = {isa = PBXBuildFile; fileRef = 36EC9FFE290171F40049BD5F /* PageBack.wav */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -73,6 +75,8 @@
 		3691965128FDD63C002DF09D /* RobotoCondensed-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "RobotoCondensed-Regular.ttf"; sourceTree = "<group>"; };
 		3691965328FEDB64002DF09D /* RobotoCondensed-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "RobotoCondensed-Bold.ttf"; sourceTree = "<group>"; };
 		3691965628FEE4DE002DF09D /* FavouriteData.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = FavouriteData.xcdatamodel; sourceTree = "<group>"; };
+		3691965929001F1F002DF09D /* DataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataManager.swift; sourceTree = "<group>"; };
+		36EC9FFE290171F40049BD5F /* PageBack.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = PageBack.wav; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -146,6 +150,7 @@
 		364C667928FCE9E2005CC112 /* SFX */ = {
 			isa = PBXGroup;
 			children = (
+				36EC9FFE290171F40049BD5F /* PageBack.wav */,
 				364C667A28FCE9F3005CC112 /* PageFlip.mp3 */,
 			);
 			path = SFX;
@@ -179,6 +184,7 @@
 				364C666728FBAE7B005CC112 /* Views */,
 				364C666628FBAE73005CC112 /* Controllers */,
 				364C666A28FBAEAD005CC112 /* Cells */,
+				3691965829001F08002DF09D /* Persistance */,
 				364C667928FCE9E2005CC112 /* SFX */,
 				3684FF8828FD85F6002A2593 /* Fonts */,
 				3671384B28FBACD0003F880B /* SceneDelegate.swift */,
@@ -186,7 +192,6 @@
 				3671385228FBACD0003F880B /* Assets.xcassets */,
 				3671385428FBACD0003F880B /* LaunchScreen.storyboard */,
 				3671385728FBACD0003F880B /* Info.plist */,
-				3691965528FEE4DE002DF09D /* FavouriteData.xcdatamodeld */,
 			);
 			path = "tarot-compendium";
 			sourceTree = "<group>";
@@ -217,6 +222,15 @@
 				3691964328FD8EB0002DF09D /* OneSlice.otf */,
 			);
 			path = Fonts;
+			sourceTree = "<group>";
+		};
+		3691965829001F08002DF09D /* Persistance */ = {
+			isa = PBXGroup;
+			children = (
+				3691965528FEE4DE002DF09D /* FavouriteData.xcdatamodeld */,
+				3691965929001F1F002DF09D /* DataManager.swift */,
+			);
+			path = Persistance;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -327,6 +341,7 @@
 				3691965228FDD63C002DF09D /* RobotoCondensed-Regular.ttf in Resources */,
 				3671385628FBACD0003F880B /* LaunchScreen.storyboard in Resources */,
 				3671385328FBACD0003F880B /* Assets.xcassets in Resources */,
+				36EC9FFF290171F40049BD5F /* PageBack.wav in Resources */,
 				3691965428FEDB64002DF09D /* RobotoCondensed-Bold.ttf in Resources */,
 				3691964A28FDD1AB002DF09D /* whitestorm.otf in Resources */,
 				3691964428FD8EB0002DF09D /* OneSlice.otf in Resources */,
@@ -355,6 +370,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				364C666C28FBAEE5005CC112 /* CardViewController.swift in Sources */,
+				3691965A29001F1F002DF09D /* DataManager.swift in Sources */,
 				3671384E28FBACD0003F880B /* CompendiumViewController.swift in Sources */,
 				3671384A28FBACD0003F880B /* AppDelegate.swift in Sources */,
 				364C667228FBAF1B005CC112 /* CardModel.swift in Sources */,
