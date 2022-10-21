@@ -29,6 +29,7 @@
 		3691965428FEDB64002DF09D /* RobotoCondensed-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 3691965328FEDB64002DF09D /* RobotoCondensed-Bold.ttf */; };
 		3691965728FEE4DE002DF09D /* FavouriteData.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 3691965528FEE4DE002DF09D /* FavouriteData.xcdatamodeld */; };
 		3691965A29001F1F002DF09D /* DataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3691965929001F1F002DF09D /* DataManager.swift */; };
+		36C308C12902BD5D002F97DA /* CollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36C308C02902BD5D002F97DA /* CollectionViewCell.swift */; };
 		36EC9FFF290171F40049BD5F /* PageBack.wav in Resources */ = {isa = PBXBuildFile; fileRef = 36EC9FFE290171F40049BD5F /* PageBack.wav */; };
 		36ECA00129018BA40049BD5F /* FavouriteCardsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36ECA00029018BA40049BD5F /* FavouriteCardsView.swift */; };
 		36ECA00329018BBE0049BD5F /* FavouriteCardsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36ECA00229018BBE0049BD5F /* FavouriteCardsViewController.swift */; };
@@ -78,6 +79,7 @@
 		3691965328FEDB64002DF09D /* RobotoCondensed-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "RobotoCondensed-Bold.ttf"; sourceTree = "<group>"; };
 		3691965628FEE4DE002DF09D /* FavouriteData.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = FavouriteData.xcdatamodel; sourceTree = "<group>"; };
 		3691965929001F1F002DF09D /* DataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataManager.swift; sourceTree = "<group>"; };
+		36C308C02902BD5D002F97DA /* CollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionViewCell.swift; sourceTree = "<group>"; };
 		36EC9FFE290171F40049BD5F /* PageBack.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = PageBack.wav; sourceTree = "<group>"; };
 		36ECA00029018BA40049BD5F /* FavouriteCardsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavouriteCardsView.swift; sourceTree = "<group>"; };
 		36ECA00229018BBE0049BD5F /* FavouriteCardsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavouriteCardsViewController.swift; sourceTree = "<group>"; };
@@ -149,6 +151,7 @@
 			isa = PBXGroup;
 			children = (
 				364C667728FC9F8D005CC112 /* TableViewCell.swift */,
+				36C308C02902BD5D002F97DA /* CollectionViewCell.swift */,
 			);
 			path = Cells;
 			sourceTree = "<group>";
@@ -380,6 +383,7 @@
 				3671384E28FBACD0003F880B /* CompendiumViewController.swift in Sources */,
 				3671384A28FBACD0003F880B /* AppDelegate.swift in Sources */,
 				364C667228FBAF1B005CC112 /* CardModel.swift in Sources */,
+				36C308C12902BD5D002F97DA /* CollectionViewCell.swift in Sources */,
 				36ECA00129018BA40049BD5F /* FavouriteCardsView.swift in Sources */,
 				3671384C28FBACD0003F880B /* SceneDelegate.swift in Sources */,
 				3691965728FEE4DE002DF09D /* FavouriteData.xcdatamodeld in Sources */,

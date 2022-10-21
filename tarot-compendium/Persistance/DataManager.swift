@@ -39,17 +39,21 @@ class DataManager {
         }
     }
     
-    func fetchSavedCards() -> [NSManagedObject]{
-        let contexManager = DataManager().persistentContainer.viewContext
-        let fetchRequest = NSFetchRequest<NSManagedObject>(entityName: "FavouriteData")
+    func fetchSavedCards() -> [FavouriteCards] {
+        let contexManager = persistentContainer.viewContext
+        let fetchRequest = FavouriteCards.fetchRequest()
         fetchRequest.returnsObjectsAsFaults = false
         do{
             let dataToReturn = try contexManager.fetch(fetchRequest)
             return dataToReturn
         } catch {
             print("falha ao obter os arquivos")
+            return []
         }
-        return [NSManagedObject]()
+    }
+    
+    func deleteFavourite(){
+        
     }
     
     

@@ -21,9 +21,13 @@ class CompendiumViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        
         self.navigationController?.navigationBar.tintColor = .black
-
+        navigationItem.rightBarButtonItem = UIBarButtonItem(image: UIImage(systemName: "heart.fill"), style: .plain, target: self, action: #selector(CompendiumViewController.navigateToFavourites))
+    }
+    
+    @objc func navigateToFavourites(){
+        let nextViewController = FavouriteCardsViewController()
+        self.navigationController?.pushViewController(nextViewController, animated: true)
     }
 }
 
