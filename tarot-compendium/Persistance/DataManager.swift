@@ -42,6 +42,7 @@ class DataManager {
     func fetchSavedCards() -> [NSManagedObject]{
         let contexManager = DataManager().persistentContainer.viewContext
         let fetchRequest = NSFetchRequest<NSManagedObject>(entityName: "FavouriteData")
+        fetchRequest.returnsObjectsAsFaults = false
         do{
             let dataToReturn = try contexManager.fetch(fetchRequest)
             return dataToReturn

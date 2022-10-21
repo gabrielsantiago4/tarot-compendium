@@ -30,6 +30,8 @@
 		3691965728FEE4DE002DF09D /* FavouriteData.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 3691965528FEE4DE002DF09D /* FavouriteData.xcdatamodeld */; };
 		3691965A29001F1F002DF09D /* DataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3691965929001F1F002DF09D /* DataManager.swift */; };
 		36EC9FFF290171F40049BD5F /* PageBack.wav in Resources */ = {isa = PBXBuildFile; fileRef = 36EC9FFE290171F40049BD5F /* PageBack.wav */; };
+		36ECA00129018BA40049BD5F /* FavouriteCardsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36ECA00029018BA40049BD5F /* FavouriteCardsView.swift */; };
+		36ECA00329018BBE0049BD5F /* FavouriteCardsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36ECA00229018BBE0049BD5F /* FavouriteCardsViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -77,6 +79,8 @@
 		3691965628FEE4DE002DF09D /* FavouriteData.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = FavouriteData.xcdatamodel; sourceTree = "<group>"; };
 		3691965929001F1F002DF09D /* DataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataManager.swift; sourceTree = "<group>"; };
 		36EC9FFE290171F40049BD5F /* PageBack.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = PageBack.wav; sourceTree = "<group>"; };
+		36ECA00029018BA40049BD5F /* FavouriteCardsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavouriteCardsView.swift; sourceTree = "<group>"; };
+		36ECA00229018BBE0049BD5F /* FavouriteCardsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavouriteCardsViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -109,6 +113,7 @@
 			children = (
 				3671384D28FBACD0003F880B /* CompendiumViewController.swift */,
 				364C666B28FBAEE5005CC112 /* CardViewController.swift */,
+				36ECA00229018BBE0049BD5F /* FavouriteCardsViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -118,6 +123,7 @@
 			children = (
 				364C666D28FBAEFC005CC112 /* CompendiumView.swift */,
 				364C666F28FBAF0D005CC112 /* CardView.swift */,
+				36ECA00029018BA40049BD5F /* FavouriteCardsView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -374,12 +380,14 @@
 				3671384E28FBACD0003F880B /* CompendiumViewController.swift in Sources */,
 				3671384A28FBACD0003F880B /* AppDelegate.swift in Sources */,
 				364C667228FBAF1B005CC112 /* CardModel.swift in Sources */,
+				36ECA00129018BA40049BD5F /* FavouriteCardsView.swift in Sources */,
 				3671384C28FBACD0003F880B /* SceneDelegate.swift in Sources */,
 				3691965728FEE4DE002DF09D /* FavouriteData.xcdatamodeld in Sources */,
 				364C667828FC9F8D005CC112 /* TableViewCell.swift in Sources */,
 				364C667428FBAF31005CC112 /* CardListModel.swift in Sources */,
 				364C667028FBAF0D005CC112 /* CardView.swift in Sources */,
 				364C667628FBAF3B005CC112 /* API.swift in Sources */,
+				36ECA00329018BBE0049BD5F /* FavouriteCardsViewController.swift in Sources */,
 				364C666E28FBAEFC005CC112 /* CompendiumView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
