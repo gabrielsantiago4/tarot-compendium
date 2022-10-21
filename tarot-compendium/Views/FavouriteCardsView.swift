@@ -69,8 +69,8 @@ extension FavouriteCardsView: UICollectionViewDelegate, UICollectionViewDataSour
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        var card = favouriteCards[indexPath.row]
-        var cell = collectionView.dequeueReusableCell(withReuseIdentifier: "CollectionViewCell", for: indexPath) as! CollectionViewCell
+        let card = favouriteCards[indexPath.row]
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "CollectionViewCell", for: indexPath) as! CollectionViewCell
         cell.favouriteCardImage.image = UIImage(named: card.name ?? "")
         return cell
     }

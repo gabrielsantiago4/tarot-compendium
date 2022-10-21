@@ -96,7 +96,7 @@ extension CompendiumView: UITableViewDelegate, UITableViewDataSource {
         didTapOnButtonHandler?(card)
         
         let pathSound = Bundle.main.path(forResource: "PageFlip", ofType: "mp3")!
-                let url = URL(fileURLWithPath: pathSound)
+        let url = URL(fileURLWithPath: pathSound)
 
                 do
                 {
