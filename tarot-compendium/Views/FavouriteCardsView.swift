@@ -11,6 +11,7 @@ class FavouriteCardsView: UIView {
     
     var favouriteCards: [FavouriteCards] = []
     let dataManager = DataManager()
+    var didTapOnButtonHanler: ((FavouriteCards) -> Void)?
     
     let backgroundImage: UIImageView = {
         let backgroundImage = UIImageView()
@@ -69,13 +70,19 @@ extension FavouriteCardsView: UICollectionViewDelegate, UICollectionViewDataSour
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let card = favouriteCards[indexPath.row]
+        let card = favouriteCards[indexPath.item]
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "CollectionViewCell", for: indexPath) as! CollectionViewCell
         cell.favouriteCardImage.image = UIImage(named: card.name ?? "")
         return cell
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        return CGSize(width: 350, height: 500)
+        return CGSize(width: 300, height: 450)
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        let card = favouriteCards[indexPath.item]
+        didTapOnButtonHanler?(card)
+        print("clicou")
     }
 }
