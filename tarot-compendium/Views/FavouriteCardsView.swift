@@ -31,6 +31,7 @@ class FavouriteCardsView: UIView {
         return collectionView
     }()
     
+    
     override init(frame: CGRect) {
         super.init(frame: frame)
         configFavouriteCardView()
@@ -40,6 +41,7 @@ class FavouriteCardsView: UIView {
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
+    
     
     func configFavouriteCardView() {
         
@@ -54,11 +56,10 @@ class FavouriteCardsView: UIView {
             backgroundImage.bottomAnchor.constraint(equalTo: bottomAnchor, constant: 0),
             backgroundImage.trailingAnchor.constraint(equalTo: trailingAnchor, constant: 0),
             backgroundImage.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 0),
-            
             collectionView.topAnchor.constraint(equalTo: topAnchor, constant: 100),
             collectionView.bottomAnchor.constraint(equalTo: bottomAnchor, constant: -50),
             collectionView.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 20),
-            collectionView.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -20),
+            collectionView.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -20)
         ])
     }
 }
@@ -83,6 +84,5 @@ extension FavouriteCardsView: UICollectionViewDelegate, UICollectionViewDataSour
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         let card = favouriteCards[indexPath.item]
         didTapOnButtonHanler?(card)
-        print("clicou")
     }
 }

@@ -43,7 +43,7 @@ class DataManager {
         let contexManager = persistentContainer.viewContext
         let fetchRequest = FavouriteCards.fetchRequest()
         fetchRequest.returnsObjectsAsFaults = false
-        do{
+        do {
             let dataToReturn = try contexManager.fetch(fetchRequest)
             return dataToReturn
         } catch {
@@ -51,10 +51,4 @@ class DataManager {
             return []
         }
     }
-    
-    func deleteFavourite(){
-        
-    }
-    
-    
 }

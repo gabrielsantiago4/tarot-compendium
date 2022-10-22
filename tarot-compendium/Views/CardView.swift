@@ -14,7 +14,7 @@ class CardView: UIView {
         backgroundImage.image = UIImage(named: "background")
         return backgroundImage
     }()
-
+    
     var cardName: UILabel = {
         let cardName = UILabel()
         return cardName
@@ -35,6 +35,7 @@ class CardView: UIView {
         return cardMeaningDown
     }()
     
+    
     override init(frame: CGRect) {
         super.init(frame: frame)
         configCardView()
@@ -43,6 +44,7 @@ class CardView: UIView {
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
+    
     
     func configure(with card: CardModel) {
         cardName.text = "\(card.name)"
@@ -54,6 +56,7 @@ class CardView: UIView {
     }
     
     func configCardView() {
+        
         addSubview(backgroundImage)
         addSubview(cardName)
         addSubview(cardImage)
@@ -64,26 +67,20 @@ class CardView: UIView {
         cardImage.translatesAutoresizingMaskIntoConstraints = false
         cardMeaningUp.translatesAutoresizingMaskIntoConstraints = false
 
-        
         NSLayoutConstraint.activate([
             backgroundImage.topAnchor.constraint(equalTo: topAnchor, constant: 0),
             backgroundImage.bottomAnchor.constraint(equalTo: bottomAnchor, constant: 0),
             backgroundImage.trailingAnchor.constraint(equalTo: trailingAnchor, constant: 0),
             backgroundImage.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 0),
-            
             cardName.centerXAnchor.constraint(equalTo: centerXAnchor, constant: 0),
             cardName.centerYAnchor.constraint(equalTo: centerYAnchor, constant: -300),
-            
             cardImage.heightAnchor.constraint(equalToConstant: 300),
             cardImage.widthAnchor.constraint(equalToConstant: 200),
             cardImage.centerXAnchor.constraint(equalTo: centerXAnchor, constant: 0),
-            cardImage.centerYAnchor.constraint(equalTo: centerYAnchor,constant: -120),
-            
-            cardMeaningUp.topAnchor.constraint(equalTo: cardImage.bottomAnchor,constant: 20),
+            cardImage.centerYAnchor.constraint(equalTo: centerYAnchor, constant: -120),
+            cardMeaningUp.topAnchor.constraint(equalTo: cardImage.bottomAnchor, constant: 20),
             cardMeaningUp.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 50),
-            cardMeaningUp.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -30),
-            
+            cardMeaningUp.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -30)
         ])
     }
-    
 }

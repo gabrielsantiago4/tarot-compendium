@@ -11,7 +11,6 @@ import AVFoundation
 class CompendiumView: UIView {
     
     var audioplayer = AVAudioPlayer()
-    
     var cards: [CardModel] = []
     var didTapOnButtonHandler: ((CardModel) -> Void)?
 
@@ -42,7 +41,6 @@ class CompendiumView: UIView {
                 self.tableView.reloadData()
             }
         }
-        
     }
     
     required init?(coder: NSCoder) {
@@ -58,21 +56,16 @@ class CompendiumView: UIView {
         tableView.translatesAutoresizingMaskIntoConstraints = false
         
         NSLayoutConstraint.activate([
-            
             backgroundImage.topAnchor.constraint(equalTo: topAnchor, constant: 0),
             backgroundImage.bottomAnchor.constraint(equalTo: bottomAnchor, constant: 0),
             backgroundImage.trailingAnchor.constraint(equalTo: trailingAnchor, constant: 0),
             backgroundImage.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 0),
-            
             tableView.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 0),
             tableView.trailingAnchor.constraint(equalTo: trailingAnchor, constant: 0),
-            tableView.topAnchor.constraint(equalTo: topAnchor, constant:  100),
+            tableView.topAnchor.constraint(equalTo: topAnchor, constant: 100),
             tableView.bottomAnchor.constraint(equalTo: bottomAnchor, constant: -50)
-        
         ])
-        
     }
-    
 }
 
 extension CompendiumView: UITableViewDelegate, UITableViewDataSource {
@@ -94,21 +87,14 @@ extension CompendiumView: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let card = cards[indexPath.row]
         didTapOnButtonHandler?(card)
-        
         let pathSound = Bundle.main.path(forResource: "PageFlip", ofType: "mp3")!
         let url = URL(fileURLWithPath: pathSound)
 
-                do
-                {
+                do {
                     audioplayer = try AVAudioPlayer(contentsOf: url)
                     audioplayer.play()
-
-                }catch{
+                } catch {
                     print(error)
-
                 }
-        
     }
-
-    
 }

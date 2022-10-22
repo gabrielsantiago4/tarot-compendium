@@ -10,7 +10,7 @@ import UIKit
 class CompendiumViewController: UIViewController {
     
     let compendiumView = CompendiumView()
-    
+
     override func loadView() {
         self.view = compendiumView
         compendiumView.didTapOnButtonHandler = { [weak self] card in
@@ -25,11 +25,8 @@ class CompendiumViewController: UIViewController {
         navigationItem.rightBarButtonItem = UIBarButtonItem(image: UIImage(systemName: "star.fill"), style: .plain, target: self, action: #selector(CompendiumViewController.navigateToFavourites))
     }
     
-    @objc func navigateToFavourites(){
+    @objc func navigateToFavourites() {
         let nextViewController = FavouriteCardsViewController()
         self.navigationController?.pushViewController(nextViewController, animated: true)
     }
 }
-
-
-

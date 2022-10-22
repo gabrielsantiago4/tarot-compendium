@@ -25,6 +25,7 @@ class CollectionViewCell: UICollectionViewCell {
     }
     
     func configCollectionViewCell() {
+        
         contentView.addSubview(favouriteCardImage)
         
         favouriteCardImage.translatesAutoresizingMaskIntoConstraints = false
@@ -34,8 +35,6 @@ class CollectionViewCell: UICollectionViewCell {
             favouriteCardImage.bottomAnchor.constraint(equalTo: contentView.bottomAnchor, constant: 0),
             favouriteCardImage.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 20),
             favouriteCardImage.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -20)
-        
         ])
     }
-    
 }

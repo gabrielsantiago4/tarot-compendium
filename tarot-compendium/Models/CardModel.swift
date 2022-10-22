@@ -8,12 +8,10 @@
 import Foundation
 
 struct CardModel: Codable {
-    
     enum CardType: String, Codable {
         case major
         case minor
     }
-    
     let name_short: String
     let name: String
     let value: String
@@ -22,5 +20,4 @@ struct CardModel: Codable {
     let meaning_up: String
     let meaning_rev: String
     let desc: String
-    
 }

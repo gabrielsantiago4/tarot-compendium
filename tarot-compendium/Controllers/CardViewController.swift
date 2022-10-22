@@ -24,14 +24,12 @@ class CardViewController: UIViewController {
     override func loadView() {
         view.self = cardView
         cardView.configure(with: card)
-    
     }
 
     override func viewDidLoad() {
         super.viewDidLoad()
         navigationItem.rightBarButtonItem = UIBarButtonItem(image: UIImage(systemName: "heart.fill"), style: .plain, target: self, action: #selector(CardViewController.saveCard))
     }
-    
     @objc func saveCard() {
         DataManager.shared.save(card: card)
     }

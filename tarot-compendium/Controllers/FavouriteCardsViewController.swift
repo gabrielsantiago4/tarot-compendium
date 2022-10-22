@@ -17,6 +17,6 @@ class FavouriteCardsViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
     }
 }
