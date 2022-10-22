@@ -42,7 +42,6 @@ class CompendiumView: UIView {
             }
         }
     }
-    
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
@@ -87,6 +86,7 @@ extension CompendiumView: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let card = cards[indexPath.row]
         didTapOnButtonHandler?(card)
+        
         let pathSound = Bundle.main.path(forResource: "PageFlip", ofType: "mp3")!
         let url = URL(fileURLWithPath: pathSound)
 
