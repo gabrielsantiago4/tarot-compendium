@@ -44,9 +44,11 @@ class CardView: UIView {
     func configure(with card: CardModel) {
         cardName.text = "\(card.name)"
         cardName.font = UIFont(name: "OneSlice", size: 27)
+        cardName.textColor = .black
         cardImage.image = UIImage(named: card.name)
         cardMeaning.text = "\(card.meaning_up) \(card.meaning_rev)"
         cardMeaning.font = UIFont(name: "whitestorm", size: 34)
+        cardMeaning.textColor = .black
         cardMeaning.backgroundColor = .clear
         cardMeaning.isEditable = false
         cardMeaning.textAlignment = .justified

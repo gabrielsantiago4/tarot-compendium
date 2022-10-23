@@ -77,6 +77,7 @@ extension CompendiumView: UITableViewDelegate, UITableViewDataSource {
         let card = cards[indexPath.row]
         let cell = tableView.dequeueReusableCell(withIdentifier: "TableViewCell") as! TableViewCell
         cell.cellName.text = card.name
+        cell.cellName.textColor = .black
         cell.cellImage.image = UIImage(named: card.name)
         cell.cellName.font = UIFont(name: "OneSlice", size: 26)
         cell.backgroundColor = .clear
