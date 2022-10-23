@@ -58,8 +58,8 @@ class FavouriteCardsView: UIView {
             backgroundImage.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 0),
             collectionView.topAnchor.constraint(equalTo: topAnchor, constant: 100),
             collectionView.bottomAnchor.constraint(equalTo: bottomAnchor, constant: -50),
-            collectionView.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 20),
-            collectionView.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -20)
+            collectionView.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 0),
+            collectionView.trailingAnchor.constraint(equalTo: trailingAnchor, constant: 0)
         ])
     }
 }
