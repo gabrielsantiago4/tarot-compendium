@@ -1,7 +1,7 @@
 
 # Tarot Compendium 🂠
 
-Tarot compendium is a tarot guide app, that contains the visual refference and possible meanings to each of the 78 cards in a tarot deck. 
+Tarot compendium is a tarot guide app that contains the visual refference and possible meanings to each of the 78 cards in a tarot deck. 
 
 ## About the Project 🔮
 The app was conceived as a studying project to practice important topics on swift development, such as UIKit interface building and API consumption. The content used was taken from the Tarot API developed by ekelen, that brings card names, descriptions, and divinatory meanings according to AE Waite's Pictorial Key to the Tarot (1910).
