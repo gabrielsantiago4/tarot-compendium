@@ -7,6 +7,7 @@
 
 import UIKit
 
+// classe responsavel por gerar a view das das cartas
 class CardView: UIView {
     
     let backgroundImage: UIImageView = {
@@ -40,7 +41,7 @@ class CardView: UIView {
         fatalError("init(coder:) has not been implemented")
     }
     
-    
+    // funcao que configura a view com as informacoes puxadas da API
     func configure(with card: CardModel) {
         cardName.text = "\(card.name)"
         cardName.font = UIFont(name: "OneSlice", size: 27)
@@ -54,6 +55,7 @@ class CardView: UIView {
         cardMeaning.textAlignment = .justified
     }
     
+    // funcao responsável por organizar os componentes na view (constraints)
     func configCardView() {
         
         addSubview(backgroundImage)

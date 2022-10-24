@@ -9,6 +9,7 @@ import Foundation
 
 struct API {
     
+    // requisição que puxa tods as cartas da API
     func getAllCards(completion: @escaping (CardListModel) -> Void) {
         guard let url = URL(string: "https://rws-cards-api.herokuapp.com/api/v1/cards") else {
             return

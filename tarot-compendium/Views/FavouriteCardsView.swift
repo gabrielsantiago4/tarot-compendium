@@ -7,6 +7,7 @@
 
 import UIKit
 
+// classe responsavel por gerar a view das das cartas favoritas
 class FavouriteCardsView: UIView {
     
     var favouriteCards: [FavouriteCards] = []

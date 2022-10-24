@@ -7,6 +7,7 @@
 
 import Foundation
 
+// modelo padrao de carta conforme a documentacao da API
 struct CardModel: Codable {
     enum CardType: String, Codable {
         case major

@@ -7,6 +7,7 @@
 
 import Foundation
 
+// modelo de lista de cartas conforme a documentação da API
 struct CardListModel: Codable {
     let nhits: Int
     let cards: [CardModel]

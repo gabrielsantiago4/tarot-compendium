@@ -7,6 +7,7 @@
 
 import UIKit
 
+// controlador responsavel pela view das cartas favorias
 class FavouriteCardsViewController: UIViewController {
     
     let favouriteCardsView = FavouriteCardsView()

@@ -7,6 +7,8 @@
 
 import UIKit
 
+
+// classe que implementa as células da collectionview
 class CollectionViewCell: UICollectionViewCell {
     
     var favouriteCardImage: UIImageView = {

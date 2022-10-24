@@ -7,6 +7,7 @@
 
 import UIKit
 
+// classe que implementa as celulas da tableview
 class TableViewCell: UITableViewCell {
     
     var cellName: UILabel = {
@@ -30,6 +31,7 @@ class TableViewCell: UITableViewCell {
     }
     
     func configTableViewCell() {
+        
         contentView.addSubview(cellName)
         contentView.addSubview(cellImage)
         

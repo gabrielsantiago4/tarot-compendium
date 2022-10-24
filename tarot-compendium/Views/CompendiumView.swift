@@ -8,6 +8,7 @@
 import UIKit
 import AVFoundation
 
+// classe responsavel por gerar a view do compendio e a lista de cartas
 class CompendiumView: UIView {
     
     var audioplayer = AVAudioPlayer()
@@ -46,6 +47,7 @@ class CompendiumView: UIView {
         fatalError("init(coder:) has not been implemented")
     }
     
+    // funcao responsável por organizar os componentes na view (constraints)
     func configCompendiumView() {
         
         addSubview(backgroundImage)
@@ -69,10 +71,12 @@ class CompendiumView: UIView {
 
 extension CompendiumView: UITableViewDelegate, UITableViewDataSource {
     
+    // funcao que determina quantidade de rows presentes na tableview
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return cards.count
     }
     
+    // funcao que determina o que sera exibido nas celulas da tableview
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let card = cards[indexPath.row]
         let cell = tableView.dequeueReusableCell(withIdentifier: "TableViewCell") as! TableViewCell
@@ -84,6 +88,8 @@ extension CompendiumView: UITableViewDelegate, UITableViewDataSource {
         return cell
     }
     
+    
+    // funcao que determina a execucao de um bloco de código ao clicar nas células da tabela
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let card = cards[indexPath.row]
         didTapOnButtonHandler?(card)

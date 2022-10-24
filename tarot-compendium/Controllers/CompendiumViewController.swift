@@ -7,6 +7,7 @@
 
 import UIKit
 
+// controllador responsável pela view do compendio
 class CompendiumViewController: UIViewController {
     
     let compendiumView = CompendiumView()
@@ -25,6 +26,7 @@ class CompendiumViewController: UIViewController {
         navigationItem.rightBarButtonItem = UIBarButtonItem(image: UIImage(systemName: "star.fill"), style: .plain, target: self, action: #selector(CompendiumViewController.navigateToFavourites))
     }
     
+    // funcao responavel por navegar da view do compendio para a view dos favoritos
     @objc func navigateToFavourites() {
         let nextViewController = FavouriteCardsViewController()
         self.navigationController?.pushViewController(nextViewController, animated: true)
