@@ -6,10 +6,12 @@
 //
 
 import UIKit
+import AVFoundation
 
 // controlador responsavel pela view das cartas
 class CardViewController: UIViewController {
     
+    var audioPlayer = AVAudioPlayer()
     let cardView = CardView()
     let card: CardModel
     
@@ -30,10 +32,26 @@ class CardViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         navigationItem.rightBarButtonItem = UIBarButtonItem(image: UIImage(systemName: "heart.fill"), style: .plain, target: self, action: #selector(CardViewController.saveCard))
+        navigationItem.leftBarButtonItem = UIBarButtonItem(image: UIImage(systemName: "chevron.backward"), style: .plain, target: self, action: #selector(CardViewController.backButtonFunc))
+        
     }
     
     // funcao responsavel por salvar as informacoes das cartas favoritas
     @objc func saveCard() {
         DataManager.shared.save(card: card)
+    }
+    
+    @objc func backButtonFunc() {
+        navigationController?.popViewController(animated: true)
+        
+        let pathSound = Bundle.main.path(forResource: "PageBack", ofType: "wav")!
+        let url = URL(fileURLWithPath: pathSound)
+
+                do {
+                    audioPlayer = try AVAudioPlayer(contentsOf: url)
+                    audioPlayer.play()
+                } catch {
+                    print(error)
+                }
     }
 }
